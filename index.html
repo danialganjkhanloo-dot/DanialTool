@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,51 +8,199 @@
 
 <style>
 
-body {
-    background-color: #111;
-    color: white;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
 
-.container {
-    max-width: 600px;
-    margin: auto;
-}
-
-h1 {
-    color: #00ffff;
-}
-
-.option {
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 10px;
-    background-color: #222;
-}
-
-input, select, button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    border: none;
+* {
     box-sizing: border-box;
 }
 
-button {
-    background-color: #00aaaa;
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top right, #243b6b 0%, transparent 35%),
+        radial-gradient(circle at bottom left, #321b50 0%, transparent 35%),
+        #080b14;
+    color: #f5f7ff;
+    font-family: "Vazirmatn", Tahoma, sans-serif;
+}
+
+.container {
+    width: min(680px, 92%);
+    margin: 40px auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #8ea7ff;
+    background: rgba(100, 120, 255, 0.10);
+    border: 1px solid rgba(140, 160, 255, 0.20);
+    padding: 7px 15px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    color: #9ca6bd;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.card {
+    background: rgba(18, 23, 38, 0.82);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 22px;
+    padding: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    backdrop-filter: blur(15px);
+}
+
+.tools {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tool {
+    padding: 15px;
+    border-radius: 14px;
+    background: #111728;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #cdd4e8;
+    font-size: 13px;
+}
+
+.tool span {
+    display: block;
+    color: #8198ff;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #cdd4e8;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 14px 15px;
+    border-radius: 13px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: #0d1220;
     color: white;
-    font-size: 16px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+select:focus,
+input:focus {
+    border-color: #7187ff;
+    box-shadow: 0 0 0 3px rgba(113,135,255,0.12);
+}
+
+#inputs {
+    margin-top: 18px;
+}
+
+.input-box {
+    margin-bottom: 14px;
+}
+
+button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px;
+    border: none;
+    border-radius: 13px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 8px 25px rgba(102,126,234,0.25);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(102,126,234,0.35);
+}
+
+button:active {
+    transform: scale(0.98);
 }
 
 .result {
-    background-color: #222;
-    padding: 15px;
-    border-radius: 10px;
+    margin-top: 20px;
+    padding: 17px;
+    min-height: 60px;
+    border-radius: 14px;
+    background: #0c111e;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #dce2f3;
     white-space: pre-wrap;
-    margin-top: 15px;
+    line-height: 2;
+    font-size: 14px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 18px;
+    color: #59647b;
+    font-size: 11px;
+}
+
+.grade-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.grade-row input {
+    flex: 1;
+}
+
+@media (max-width: 520px) {
+
+    .container {
+        margin: 25px auto;
+    }
+
+    h1 {
+        font-size: 31px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .tools {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 </style>
@@ -62,39 +210,88 @@ button {
 
 <div class="container">
 
-<h1>Salam DADASHI!</h1>
+    <div class="header">
+        <div class="logo">DANIAL TOOL</div>
 
-<p>
-Az in barname mitooni baraye taghalob ya abzare komaki, estefade koni.
-</p>
+        <h1>ابزارهای کاربردی</h1>
 
-<div class="option">1. bakhsh paziri</div>
-<div class="option">2. zoj ya fard</div>
-<div class="option">3. adade avval</div>
-<div class="option">4. baghi mande va khareje ghesmate taghsim</div>
-<div class="option">5. jadval zarb ( adad ro to midi )</div>
-<div class="option">6. miangin nomrehat chande? ( moaddel )</div>
+        <div class="subtitle">
+            چند ابزار ساده و سریع، همه در یک جا
+        </div>
+    </div>
 
-<label>Adade gozinei ke mikhay ro benevis :</label>
 
-<select id="entekhab" onchange="showInputs()">
+    <div class="card">
 
-<option value="1">1. bakhsh paziri</option>
-<option value="2">2. zoj ya fard</option>
-<option value="3">3. adade avval</option>
-<option value="4">4. baghi mande va khareje ghesmate taghsim</option>
-<option value="5">5. jadval zarb</option>
-<option value="6">6. miangin</option>
+        <div class="tools">
 
-</select>
+            <div class="tool">
+                <span>01</span>
+                بخش‌پذیری
+            </div>
 
-<div id="inputs"></div>
+            <div class="tool">
+                <span>02</span>
+                زوج یا فرد
+            </div>
 
-<button onclick="runTool()">Ejra</button>
+            <div class="tool">
+                <span>03</span>
+                عدد اول
+            </div>
 
-<div class="result" id="result">
-Result inja namayesh dade mishe.
-</div>
+            <div class="tool">
+                <span>04</span>
+                تقسیم و باقی‌مانده
+            </div>
+
+            <div class="tool">
+                <span>05</span>
+                جدول ضرب
+            </div>
+
+            <div class="tool">
+                <span>06</span>
+                محاسبه معدل
+            </div>
+
+        </div>
+
+
+        <label for="entekhab">
+            ابزار موردنظر را انتخاب کنید
+        </label>
+
+        <select id="entekhab" onchange="showInputs()">
+
+            <option value="1">بخش‌پذیری</option>
+            <option value="2">زوج یا فرد</option>
+            <option value="3">عدد اول</option>
+            <option value="4">تقسیم و باقی‌مانده</option>
+            <option value="5">جدول ضرب</option>
+            <option value="6">محاسبه معدل</option>
+
+        </select>
+
+
+        <div id="inputs"></div>
+
+
+        <button onclick="runTool()">
+            اجرای ابزار
+        </button>
+
+
+        <div class="result" id="result">
+            نتیجه اینجا نمایش داده می‌شود.
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        DanialTool • ساخته شده برای استفاده سریع و ساده
+    </div>
 
 </div>
 
@@ -107,34 +304,99 @@ function showInputs() {
 
     let inputs = document.getElementById("inputs");
 
-    if (choice == "1" || choice == "2" || choice == "3" || choice == "5") {
+
+    if (
+        choice == "1" ||
+        choice == "2" ||
+        choice == "3" ||
+        choice == "5"
+    ) {
 
         inputs.innerHTML = `
-        <label>Adad ra vared konid :</label>
-        <input type="number" id="number">
+            <div class="input-box">
+                <label>عدد را وارد کنید</label>
+                <input type="number" id="number">
+            </div>
         `;
 
     }
+
 
     else if (choice == "4") {
 
         inputs.innerHTML = `
-        <label>Adade aval ra vared konid:</label>
-        <input type="number" id="number4">
 
-        <label>Adade dovom ra vared konid:</label>
-        <input type="number" id="number5">
+            <div class="input-box">
+                <label>عدد اول</label>
+                <input type="number" id="number4">
+            </div>
+
+            <div class="input-box">
+                <label>عدد دوم</label>
+                <input type="number" id="number5">
+            </div>
+
         `;
 
     }
+
 
     else if (choice == "6") {
 
         inputs.innerHTML = `
-        <label>Chand ta nomre darid? ( tedade nomarat )</label>
-        <input type="number" id="tedad">
+
+            <label>تعداد نمره‌ها</label>
+
+            <input
+                type="number"
+                id="tedad"
+                min="1"
+                placeholder="مثلاً 5"
+                onchange="makeGrades()"
+            >
+
+            <div id="grades"></div>
+
         `;
+
     }
+
+}
+
+
+function makeGrades() {
+
+    let tedad = Number(document.getElementById("tedad").value);
+
+    let grades = document.getElementById("grades");
+
+    grades.innerHTML = "";
+
+    if (tedad < 1 || tedad > 30) {
+        return;
+    }
+
+    for (let x = 1; x <= tedad; x++) {
+
+        grades.innerHTML += `
+
+            <div class="grade-row">
+
+                <input
+                    type="number"
+                    class="grade"
+                    min="0"
+                    max="20"
+                    step="0.01"
+                    placeholder="نمره ${x}"
+                >
+
+            </div>
+
+        `;
+
+    }
+
 }
 
 
@@ -145,58 +407,97 @@ function runTool() {
     let result = "";
 
 
-    // 1
+    /* 1 - بخش پذیری */
+
     if (choice == "1") {
 
-        let number = Number(document.getElementById("number").value);
+        let number = Number(
+            document.getElementById("number").value
+        );
 
-        if (number > 10000) {
 
-            result = "Lotfan adade zire 10 hezar vared konid";
+        if (!Number.isInteger(number)) {
 
-        } else {
+            result = "لطفاً یک عدد صحیح وارد کنید.";
 
-            for (let x = 1; x < 10000; x++) {
+        }
+
+        else if (number > 10000) {
+
+            result = "لطفاً عددی زیر ۱۰ هزار وارد کنید.";
+
+        }
+
+        else if (number == 0) {
+
+            result = "عدد صفر را نمی‌توان برای این ابزار بررسی کرد.";
+
+        }
+
+        else {
+
+            for (let x = 1; x <= Math.abs(number); x++) {
 
                 if (number % x == 0) {
 
-                    result += number + " bakhsh pazir hast bar " + x + "\n";
+                    result +=
+                        number +
+                        " بر " +
+                        x +
+                        " بخش‌پذیر است.\n";
 
                 }
+
             }
+
         }
+
     }
 
 
-    // 2
+    /* 2 - زوج یا فرد */
+
     else if (choice == "2") {
 
-        let number2 = Number(document.getElementById("number").value);
+        let number2 = Number(
+            document.getElementById("number").value
+        );
+
 
         if (number2 % 2 == 0) {
 
-            result = number2 + " zoj ast";
-
-        } else {
-
-            result = number2 + " fard ast";
+            result = number2 + " یک عدد زوج است.";
 
         }
+
+        else {
+
+            result = number2 + " یک عدد فرد است.";
+
+        }
+
     }
 
 
-    // 3
+    /* 3 - عدد اول */
+
     else if (choice == "3") {
 
-        let number3 = Number(document.getElementById("number").value);
+        let number3 = Number(
+            document.getElementById("number").value
+        );
+
 
         if (number3 < 2) {
 
-            result = "Adad avval nist";
+            result = "این عدد اول نیست.";
 
-        } else {
+        }
+
+        else {
 
             let prime = true;
+
 
             for (let x = 2; x < number3; x++) {
 
@@ -206,60 +507,161 @@ function runTool() {
                     break;
 
                 }
+
             }
+
 
             if (prime) {
 
-                result = number3 + " adade avval hast";
-
-            } else {
-
-                result = number3 + " adade avval nist";
+                result =
+                    number3 +
+                    " یک عدد اول است.";
 
             }
+
+            else {
+
+                result =
+                    number3 +
+                    " عدد اول نیست.";
+
+            }
+
         }
+
     }
 
 
-    // 4
+    /* 4 - تقسیم */
+
     else if (choice == "4") {
 
-        let number4 = Number(document.getElementById("number4").value);
+        let number4 = Number(
+            document.getElementById("number4").value
+        );
 
-        let number5 = Number(document.getElementById("number5").value);
+        let number5 = Number(
+            document.getElementById("number5").value
+        );
 
-        let khareje_ghesmat = Math.floor(number4 / number5);
 
-        let baghimande = number4 % number5;
+        if (number5 == 0) {
 
-        result =
-        "Khareje ghesmat: " + khareje_ghesmat +
-        "\nBaghimande: " + baghimande;
+            result =
+                "تقسیم بر صفر امکان‌پذیر نیست.";
+
+        }
+
+        else {
+
+            let khareje_ghesmat =
+                Math.floor(number4 / number5);
+
+            let baghimande =
+                number4 % number5;
+
+
+            result =
+                "خارج قسمت: " +
+                khareje_ghesmat +
+                "\nباقی‌مانده: " +
+                baghimande;
+
+        }
 
     }
 
 
-    // 5
+    /* 5 - جدول ضرب */
+
     else if (choice == "5") {
 
-        let number5 = Number(document.getElementById("number").value);
+        let number5 = Number(
+            document.getElementById("number").value
+        );
+
 
         for (let x = 1; x <= 50; x++) {
 
-            result += number5 + " x " + x + " = " + (number5 * x) + "\n";
+            result +=
+                number5 +
+                " × " +
+                x +
+                " = " +
+                (number5 * x) +
+                "\n";
 
         }
+
     }
 
 
-    // 6
+    /* 6 - معدل */
+
     else if (choice == "6") {
 
-        let tedad = Number(document.getElementById("tedad").value);
+        let grades =
+            document.querySelectorAll(".grade");
 
-        result =
-        "Tedade nomarat: " + tedad +
-        "\n\nIn bakhsh ro dar ghadame badi kamel mikonim.";
+
+        if (grades.length == 0) {
+
+            result =
+                "اول تعداد نمره‌ها را وارد کنید.";
+
+        }
+
+        else {
+
+            let total = 0;
+            let valid = true;
+
+
+            grades.forEach(function(input) {
+
+                let grade = Number(input.value);
+
+
+                if (
+                    input.value === "" ||
+                    grade < 0 ||
+                    grade > 20
+                ) {
+
+                    valid = false;
+
+                }
+
+
+                total += grade;
+
+            });
+
+
+            if (!valid) {
+
+                result =
+                    "لطفاً همه نمره‌ها را بین ۰ تا ۲۰ وارد کنید.";
+
+            }
+
+            else {
+
+                let miangin =
+                    total / grades.length;
+
+
+                result =
+                    "مجموع نمره‌ها: " +
+                    total.toFixed(2) +
+                    "\nتعداد نمره‌ها: " +
+                    grades.length +
+                    "\nمعدل: " +
+                    miangin.toFixed(2);
+
+            }
+
+        }
 
     }
 
