@@ -7,7 +7,6 @@
 <title>DanialTool</title>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
 
 * {
@@ -18,191 +17,215 @@ body {
     margin: 0;
     min-height: 100vh;
     background:
-        radial-gradient(circle at top right, #243b6b 0%, transparent 35%),
-        radial-gradient(circle at bottom left, #321b50 0%, transparent 35%),
+        radial-gradient(circle at 90% 0%, #263c70 0%, transparent 32%),
+        radial-gradient(circle at 10% 100%, #351c52 0%, transparent 30%),
         #080b14;
     color: #f5f7ff;
     font-family: "Vazirmatn", Tahoma, sans-serif;
 }
 
 .container {
-    width: min(680px, 92%);
-    margin: 40px auto;
+    width: min(700px, 92%);
+    margin: 32px auto;
 }
 
 .header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 .logo {
     display: inline-block;
-    font-size: 14px;
-    font-weight: 700;
-    color: #8ea7ff;
-    background: rgba(100, 120, 255, 0.10);
-    border: 1px solid rgba(140, 160, 255, 0.20);
-    padding: 7px 15px;
+    color: #9babff;
+    background: rgba(120,140,255,.10);
+    border: 1px solid rgba(150,160,255,.18);
+    padding: 6px 15px;
     border-radius: 50px;
-    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: 700;
 }
 
 h1 {
-    margin: 0;
-    font-size: 38px;
+    margin: 12px 0 5px;
+    font-size: 36px;
     font-weight: 800;
-    letter-spacing: -1px;
 }
 
 .subtitle {
-    color: #9ca6bd;
-    margin-top: 10px;
-    font-size: 14px;
+    color: #8e99b2;
+    font-size: 13px;
 }
 
 .card {
-    background: rgba(18, 23, 38, 0.82);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(17,22,37,.86);
+    border: 1px solid rgba(255,255,255,.07);
     border-radius: 22px;
-    padding: 25px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    padding: 22px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.35);
     backdrop-filter: blur(15px);
+}
+
+.section-title {
+    color: #aab5ce;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 5px 2px 10px;
 }
 
 .tools {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 25px;
+    grid-template-columns: repeat(2,1fr);
+    gap: 9px;
+    margin-bottom: 22px;
 }
 
 .tool {
-    padding: 15px;
+    border: 1px solid rgba(255,255,255,.06);
+    background: #111727;
     border-radius: 14px;
-    background: #111728;
-    border: 1px solid rgba(255,255,255,0.06);
-    color: #cdd4e8;
-    font-size: 13px;
+    padding: 12px;
+    cursor: pointer;
+    transition: .18s;
 }
 
-.tool span {
-    display: block;
-    color: #8198ff;
-    font-size: 11px;
+.tool:hover {
+    transform: translateY(-2px);
+    border-color: rgba(120,140,255,.35);
+    background: #151c30;
+}
+
+.tool.active {
+    border-color: #7286ff;
+    background: rgba(100,120,255,.12);
+}
+
+.tool-icon {
+    font-size: 19px;
     margin-bottom: 4px;
+}
+
+.tool-name {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.tool-desc {
+    color: #6f7b94;
+    font-size: 10px;
+    margin-top: 2px;
 }
 
 label {
     display: block;
-    margin-bottom: 8px;
-    color: #cdd4e8;
-    font-size: 14px;
+    color: #cbd3e6;
+    font-size: 13px;
     font-weight: 600;
+    margin-bottom: 7px;
 }
 
 select,
 input {
     width: 100%;
-    padding: 14px 15px;
-    border-radius: 13px;
-    border: 1px solid rgba(255,255,255,0.08);
+    padding: 13px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.08);
     background: #0d1220;
     color: white;
     font-family: inherit;
     font-size: 14px;
     outline: none;
-    transition: 0.2s;
 }
 
 select:focus,
 input:focus {
-    border-color: #7187ff;
-    box-shadow: 0 0 0 3px rgba(113,135,255,0.12);
+    border-color: #7286ff;
+    box-shadow: 0 0 0 3px rgba(114,134,255,.1);
 }
 
-#inputs {
-    margin-top: 18px;
-}
-
-.input-box {
-    margin-bottom: 14px;
+.field {
+    margin-top: 13px;
 }
 
 button {
     width: 100%;
-    margin-top: 8px;
-    padding: 14px;
+    padding: 13px;
+    margin-top: 16px;
     border: none;
-    border-radius: 13px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 12px;
+    background: linear-gradient(135deg,#667eea,#764ba2);
     color: white;
     font-family: inherit;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     cursor: pointer;
-    transition: 0.2s;
-    box-shadow: 0 8px 25px rgba(102,126,234,0.25);
+    transition: .18s;
 }
 
 button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(102,126,234,0.35);
 }
 
-button:active {
-    transform: scale(0.98);
+.secondary {
+    margin-top: 8px;
+    background: #151b2c;
+    color: #aeb8cf;
+    box-shadow: none;
 }
 
 .result {
-    margin-top: 20px;
-    padding: 17px;
-    min-height: 60px;
-    border-radius: 14px;
-    background: #0c111e;
-    border: 1px solid rgba(255,255,255,0.06);
-    color: #dce2f3;
+    margin-top: 16px;
+    padding: 15px;
+    min-height: 58px;
+    background: #0b101c;
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 13px;
+    color: #e2e7f4;
     white-space: pre-wrap;
     line-height: 2;
     font-size: 14px;
 }
 
-.footer {
-    text-align: center;
-    margin-top: 18px;
-    color: #59647b;
-    font-size: 11px;
-}
-
-.grade-row {
+.result-buttons {
     display: flex;
     gap: 8px;
-    margin-bottom: 10px;
 }
 
-.grade-row input {
+.result-buttons button {
     flex: 1;
 }
 
-@media (max-width: 520px) {
+.hidden {
+    display: none;
+}
 
+.footer {
+    text-align: center;
+    color: #555f75;
+    font-size: 10px;
+    margin-top: 16px;
+}
+
+@media(max-width:520px) {
     .container {
-        margin: 25px auto;
+        margin: 22px auto;
     }
 
     h1 {
-        font-size: 31px;
+        font-size: 30px;
     }
 
     .card {
-        padding: 18px;
+        padding: 16px;
     }
 
     .tools {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
+    .tool-desc {
+        display: none;
+    }
 }
-
 </style>
 </head>
 
@@ -210,470 +233,634 @@ button:active {
 
 <div class="container">
 
-    <div class="header">
-        <div class="logo">DANIAL TOOL</div>
+<div class="header">
+    <div class="logo">DANIAL TOOL</div>
+    <h1>ابزارهای کاربردی</h1>
+    <div class="subtitle">سریع، ساده و همه‌کاره</div>
+</div>
 
-        <h1>ابزارهای کاربردی</h1>
+<div class="card">
 
-        <div class="subtitle">
-            چند ابزار ساده و سریع، همه در یک جا
-        </div>
-    </div>
+<div class="section-title">ابزارها</div>
 
+<div class="tools">
 
-    <div class="card">
+<div class="tool active" onclick="selectTool('average',this)">
+    <div class="tool-icon">🎓</div>
+    <div class="tool-name">محاسبه معدل</div>
+    <div class="tool-desc">محاسبه سریع نمره‌ها</div>
+</div>
 
-        <div class="tools">
+<div class="tool" onclick="selectTool('percent',this)">
+    <div class="tool-icon">٪</div>
+    <div class="tool-name">درصد</div>
+    <div class="tool-desc">محاسبه درصد و مقدار</div>
+</div>
 
-            <div class="tool">
-                <span>01</span>
-                بخش‌پذیری
-            </div>
+<div class="tool" onclick="selectTool('shape',this)">
+    <div class="tool-icon">📐</div>
+    <div class="tool-name">محیط و مساحت</div>
+    <div class="tool-desc">انواع شکل‌ها</div>
+</div>
 
-            <div class="tool">
-                <span>02</span>
-                زوج یا فرد
-            </div>
+<div class="tool" onclick="selectTool('calculator',this)">
+    <div class="tool-icon">🧮</div>
+    <div class="tool-name">ماشین حساب</div>
+    <div class="tool-desc">محاسبات سریع</div>
+</div>
 
-            <div class="tool">
-                <span>03</span>
-                عدد اول
-            </div>
+<div class="tool" onclick="selectTool('gcf',this)">
+    <div class="tool-icon">🔢</div>
+    <div class="tool-name">ب.م.م و ک.م.م</div>
+    <div class="tool-desc">دو عدد را وارد کن</div>
+</div>
 
-            <div class="tool">
-                <span>04</span>
-                تقسیم و باقی‌مانده
-            </div>
+<div class="tool" onclick="selectTool('discount',this)">
+    <div class="tool-icon">🏷️</div>
+    <div class="tool-name">تخفیف</div>
+    <div class="tool-desc">قیمت نهایی</div>
+</div>
 
-            <div class="tool">
-                <span>05</span>
-                جدول ضرب
-            </div>
+<div class="tool" onclick="selectTool('convert',this)">
+    <div class="tool-icon">🔄</div>
+    <div class="tool-name">تبدیل واحد</div>
+    <div class="tool-desc">طول، وزن، دما و زمان</div>
+</div>
 
-            <div class="tool">
-                <span>06</span>
-                محاسبه معدل
-            </div>
+<div class="tool" onclick="selectTool('speed',this)">
+    <div class="tool-icon">🚗</div>
+    <div class="tool-name">سرعت، زمان، مسافت</div>
+    <div class="tool-desc">محاسبات حرکتی</div>
+</div>
 
-        </div>
+<div class="tool" onclick="selectTool('fraction',this)">
+    <div class="tool-icon">½</div>
+    <div class="tool-name">کسر و درصد</div>
+    <div class="tool-desc">کسر به اعشار و درصد</div>
+</div>
 
+<div class="tool" onclick="selectTool('power',this)">
+    <div class="tool-icon">x²</div>
+    <div class="tool-name">توان و ریشه</div>
+    <div class="tool-desc">توان، جذر و...</div>
+</div>
 
-        <label for="entekhab">
-            ابزار موردنظر را انتخاب کنید
-        </label>
+<div class="tool" onclick="selectTool('divisibility',this)">
+    <div class="tool-icon">➗</div>
+    <div class="tool-name">بخش‌پذیری</div>
+</div>
 
-        <select id="entekhab" onchange="showInputs()">
+<div class="tool" onclick="selectTool('evenodd',this)">
+    <div class="tool-icon">⚖️</div>
+    <div class="tool-name">زوج یا فرد</div>
+</div>
 
-            <option value="1">بخش‌پذیری</option>
-            <option value="2">زوج یا فرد</option>
-            <option value="3">عدد اول</option>
-            <option value="4">تقسیم و باقی‌مانده</option>
-            <option value="5">جدول ضرب</option>
-            <option value="6">محاسبه معدل</option>
+<div class="tool" onclick="selectTool('prime',this)">
+    <div class="tool-icon">🔎</div>
+    <div class="tool-name">عدد اول</div>
+</div>
 
-        </select>
+<div class="tool" onclick="selectTool('division',this)">
+    <div class="tool-icon">➗</div>
+    <div class="tool-name">خارج قسمت</div>
+</div>
 
+<div class="tool" onclick="selectTool('multiply',this)">
+    <div class="tool-icon">✖️</div>
+    <div class="tool-name">جدول ضرب</div>
+</div>
 
-        <div id="inputs"></div>
+</div>
 
+<div id="form"></div>
 
-        <button onclick="runTool()">
-            اجرای ابزار
-        </button>
+<button onclick="runTool()">اجرای ابزار</button>
 
+<div class="result" id="result">
+نتیجه اینجا نمایش داده می‌شود.
+</div>
 
-        <div class="result" id="result">
-            نتیجه اینجا نمایش داده می‌شود.
-        </div>
+<div class="result-buttons">
+    <button class="secondary" onclick="copyResult()">کپی نتیجه</button>
+    <button class="secondary" onclick="clearTool()">پاک کردن</button>
+</div>
 
-    </div>
+</div>
 
-
-    <div class="footer">
-        DanialTool • ساخته شده برای استفاده سریع و ساده
-    </div>
+<div class="footer">
+DanialTool • ساخته شده با ❤️
+</div>
 
 </div>
 
 
 <script>
 
-function showInputs() {
-
-    let choice = document.getElementById("entekhab").value;
-
-    let inputs = document.getElementById("inputs");
+let currentTool = "average";
 
 
-    if (
-        choice == "1" ||
-        choice == "2" ||
-        choice == "3" ||
-        choice == "5"
-    ) {
+function selectTool(tool, element) {
 
-        inputs.innerHTML = `
-            <div class="input-box">
-                <label>عدد را وارد کنید</label>
-                <input type="number" id="number">
-            </div>
-        `;
+    currentTool = tool;
 
-    }
+    document.querySelectorAll(".tool").forEach(x =>
+        x.classList.remove("active")
+    );
 
+    element.classList.add("active");
 
-    else if (choice == "4") {
+    showForm();
 
-        inputs.innerHTML = `
-
-            <div class="input-box">
-                <label>عدد اول</label>
-                <input type="number" id="number4">
-            </div>
-
-            <div class="input-box">
-                <label>عدد دوم</label>
-                <input type="number" id="number5">
-            </div>
-
-        `;
-
-    }
+    document.getElementById("result").textContent =
+        "نتیجه اینجا نمایش داده می‌شود.";
+}
 
 
-    else if (choice == "6") {
+function field(id,label,placeholder="") {
 
-        inputs.innerHTML = `
+    return `
+        <div class="field">
+            <label>${label}</label>
+            <input id="${id}" type="number" placeholder="${placeholder}">
+        </div>
+    `;
+}
 
-            <label>تعداد نمره‌ها</label>
 
-            <input
-                type="number"
-                id="tedad"
-                min="1"
-                placeholder="مثلاً 5"
-                onchange="makeGrades()"
-            >
+function showForm() {
 
+    let f = document.getElementById("form");
+
+    if(currentTool === "average") {
+
+        f.innerHTML = `
+            ${field("count","تعداد نمره‌ها","مثلاً 5")}
             <div id="grades"></div>
-
+            <button class="secondary" onclick="makeGrades()">ساخت فیلد نمره‌ها</button>
         `;
 
     }
 
+    else if(currentTool === "percent") {
+
+        f.innerHTML = `
+            ${field("p","درصد","مثلاً 20")}
+            ${field("number","عدد","مثلاً 500")}
+        `;
+
+    }
+
+    else if(currentTool === "shape") {
+
+        f.innerHTML = `
+            <div class="field">
+                <label>شکل موردنظر</label>
+                <select id="shapeType" onchange="shapeFields()">
+                    <option value="square">مربع</option>
+                    <option value="rectangle">مستطیل</option>
+                    <option value="circle">دایره</option>
+                    <option value="triangle">مثلث</option>
+                </select>
+            </div>
+            <div id="shapeFields"></div>
+        `;
+
+        shapeFields();
+
+    }
+
+    else if(currentTool === "calculator") {
+
+        f.innerHTML = `
+            ${field("calc","عبارت ریاضی","مثلاً 25 + 8 * 2")}
+        `;
+
+    }
+
+    else if(currentTool === "gcf") {
+
+        f.innerHTML = `
+            ${field("a","عدد اول")}
+            ${field("b","عدد دوم")}
+        `;
+
+    }
+
+    else if(currentTool === "discount") {
+
+        f.innerHTML = `
+            ${field("price","قیمت","مثلاً 500000")}
+            ${field("discount","درصد تخفیف","مثلاً 20")}
+        `;
+
+    }
+
+    else if(currentTool === "convert") {
+
+        f.innerHTML = `
+            <div class="field">
+                <label>نوع تبدیل</label>
+                <select id="convertType">
+                    <option value="cm">سانتی‌متر → متر</option>
+                    <option value="m">متر → سانتی‌متر</option>
+                    <option value="kg">کیلوگرم → گرم</option>
+                    <option value="g">گرم → کیلوگرم</option>
+                    <option value="c">سلسیوس → فارنهایت</option>
+                    <option value="f">فارنهایت → سلسیوس</option>
+                    <option value="min">دقیقه → ثانیه</option>
+                    <option value="hour">ساعت → دقیقه</option>
+                </select>
+            </div>
+            ${field("convertNumber","مقدار")}
+        `;
+
+    }
+
+    else if(currentTool === "speed") {
+
+        f.innerHTML = `
+            <div class="field">
+                <label>چه چیزی را می‌خواهید پیدا کنید؟</label>
+                <select id="speedType">
+                    <option value="speed">سرعت</option>
+                    <option value="distance">مسافت</option>
+                    <option value="time">زمان</option>
+                </select>
+            </div>
+            ${field("distance","مسافت")}
+            ${field("time","زمان")}
+            ${field("speed","سرعت")}
+        `;
+
+    }
+
+    else if(currentTool === "fraction") {
+
+        f.innerHTML = `
+            ${field("numerator","صورت کسر")}
+            ${field("denominator","مخرج کسر")}
+        `;
+
+    }
+
+    else if(currentTool === "power") {
+
+        f.innerHTML = `
+            <div class="field">
+                <label>نوع محاسبه</label>
+                <select id="powerType">
+                    <option value="power">توان</option>
+                    <option value="sqrt">جذر</option>
+                </select>
+            </div>
+            ${field("base","عدد")}
+            ${field("exponent","توان","مثلاً 2")}
+        `;
+
+    }
+
+    else if(currentTool === "divisibility") {
+        f.innerHTML = field("number","عدد");
+    }
+
+    else if(currentTool === "evenodd") {
+        f.innerHTML = field("number","عدد");
+    }
+
+    else if(currentTool === "prime") {
+        f.innerHTML = field("number","عدد");
+    }
+
+    else if(currentTool === "division") {
+
+        f.innerHTML = `
+            ${field("a","عدد اول")}
+            ${field("b","عدد دوم")}
+        `;
+
+    }
+
+    else if(currentTool === "multiply") {
+        f.innerHTML = field("number","عدد");
+    }
+}
+
+
+function shapeFields() {
+
+    let type = document.getElementById("shapeType").value;
+    let box = document.getElementById("shapeFields");
+
+    if(type === "square") {
+        box.innerHTML = field("s","طول ضلع");
+    }
+
+    else if(type === "rectangle") {
+        box.innerHTML =
+            field("length","طول") +
+            field("width","عرض");
+    }
+
+    else if(type === "circle") {
+        box.innerHTML = field("radius","شعاع");
+    }
+
+    else if(type === "triangle") {
+        box.innerHTML =
+            field("base","قاعده") +
+            field("height","ارتفاع") +
+            field("side1","ضلع اول") +
+            field("side2","ضلع دوم") +
+            field("side3","ضلع سوم");
+    }
 }
 
 
 function makeGrades() {
 
-    let tedad = Number(document.getElementById("tedad").value);
+    let count = Number(document.getElementById("count").value);
+    let box = document.getElementById("grades");
 
-    let grades = document.getElementById("grades");
+    box.innerHTML = "";
 
-    grades.innerHTML = "";
-
-    if (tedad < 1 || tedad > 30) {
+    if(count < 1 || count > 30) {
+        box.innerHTML =
+            "<p style='color:#ff8c8c;font-size:12px'>تعداد باید بین ۱ تا ۳۰ باشد.</p>";
         return;
     }
 
-    for (let x = 1; x <= tedad; x++) {
+    for(let i=1;i<=count;i++) {
 
-        grades.innerHTML += `
-
-            <div class="grade-row">
-
-                <input
-                    type="number"
-                    class="grade"
-                    min="0"
-                    max="20"
-                    step="0.01"
-                    placeholder="نمره ${x}"
-                >
-
+        box.innerHTML += `
+            <div class="field">
+                <input class="grade" type="number"
+                min="0" max="20" step="0.01"
+                placeholder="نمره ${i}">
             </div>
-
         `;
 
     }
-
 }
 
 
 function runTool() {
 
-    let choice = document.getElementById("entekhab").value;
+    let r = document.getElementById("result");
 
-    let result = "";
+    try {
 
+        if(currentTool === "average") {
 
-    /* 1 - بخش پذیری */
+            let grades = document.querySelectorAll(".grade");
 
-    if (choice == "1") {
-
-        let number = Number(
-            document.getElementById("number").value
-        );
-
-
-        if (!Number.isInteger(number)) {
-
-            result = "لطفاً یک عدد صحیح وارد کنید.";
-
-        }
-
-        else if (number > 10000) {
-
-            result = "لطفاً عددی زیر ۱۰ هزار وارد کنید.";
-
-        }
-
-        else if (number == 0) {
-
-            result = "عدد صفر را نمی‌توان برای این ابزار بررسی کرد.";
-
-        }
-
-        else {
-
-            for (let x = 1; x <= Math.abs(number); x++) {
-
-                if (number % x == 0) {
-
-                    result +=
-                        number +
-                        " بر " +
-                        x +
-                        " بخش‌پذیر است.\n";
-
-                }
-
+            if(!grades.length) {
+                r.textContent = "اول تعداد نمره‌ها را وارد و فیلدها را بسازید.";
+                return;
             }
-
-        }
-
-    }
-
-
-    /* 2 - زوج یا فرد */
-
-    else if (choice == "2") {
-
-        let number2 = Number(
-            document.getElementById("number").value
-        );
-
-
-        if (number2 % 2 == 0) {
-
-            result = number2 + " یک عدد زوج است.";
-
-        }
-
-        else {
-
-            result = number2 + " یک عدد فرد است.";
-
-        }
-
-    }
-
-
-    /* 3 - عدد اول */
-
-    else if (choice == "3") {
-
-        let number3 = Number(
-            document.getElementById("number").value
-        );
-
-
-        if (number3 < 2) {
-
-            result = "این عدد اول نیست.";
-
-        }
-
-        else {
-
-            let prime = true;
-
-
-            for (let x = 2; x < number3; x++) {
-
-                if (number3 % x == 0) {
-
-                    prime = false;
-                    break;
-
-                }
-
-            }
-
-
-            if (prime) {
-
-                result =
-                    number3 +
-                    " یک عدد اول است.";
-
-            }
-
-            else {
-
-                result =
-                    number3 +
-                    " عدد اول نیست.";
-
-            }
-
-        }
-
-    }
-
-
-    /* 4 - تقسیم */
-
-    else if (choice == "4") {
-
-        let number4 = Number(
-            document.getElementById("number4").value
-        );
-
-        let number5 = Number(
-            document.getElementById("number5").value
-        );
-
-
-        if (number5 == 0) {
-
-            result =
-                "تقسیم بر صفر امکان‌پذیر نیست.";
-
-        }
-
-        else {
-
-            let khareje_ghesmat =
-                Math.floor(number4 / number5);
-
-            let baghimande =
-                number4 % number5;
-
-
-            result =
-                "خارج قسمت: " +
-                khareje_ghesmat +
-                "\nباقی‌مانده: " +
-                baghimande;
-
-        }
-
-    }
-
-
-    /* 5 - جدول ضرب */
-
-    else if (choice == "5") {
-
-        let number5 = Number(
-            document.getElementById("number").value
-        );
-
-
-        for (let x = 1; x <= 50; x++) {
-
-            result +=
-                number5 +
-                " × " +
-                x +
-                " = " +
-                (number5 * x) +
-                "\n";
-
-        }
-
-    }
-
-
-    /* 6 - معدل */
-
-    else if (choice == "6") {
-
-        let grades =
-            document.querySelectorAll(".grade");
-
-
-        if (grades.length == 0) {
-
-            result =
-                "اول تعداد نمره‌ها را وارد کنید.";
-
-        }
-
-        else {
 
             let total = 0;
-            let valid = true;
 
+            for(let g of grades) {
 
-            grades.forEach(function(input) {
+                let n = Number(g.value);
 
-                let grade = Number(input.value);
-
-
-                if (
-                    input.value === "" ||
-                    grade < 0 ||
-                    grade > 20
-                ) {
-
-                    valid = false;
-
+                if(g.value === "" || n < 0 || n > 20) {
+                    r.textContent = "همه نمره‌ها باید بین ۰ تا ۲۰ باشند.";
+                    return;
                 }
 
+                total += n;
+            }
 
-                total += grade;
+            r.textContent =
+                "تعداد نمره‌ها: " + grades.length +
+                "\nمجموع: " + total.toFixed(2) +
+                "\nمعدل: " + (total/grades.length).toFixed(2);
 
-            });
+        }
 
 
-            if (!valid) {
+        else if(currentTool === "percent") {
 
-                result =
-                    "لطفاً همه نمره‌ها را بین ۰ تا ۲۰ وارد کنید.";
+            let p = Number(document.getElementById("p").value);
+            let n = Number(document.getElementById("number").value);
+
+            r.textContent =
+                p + "٪ از " + n +
+                " = " + ((p*n)/100);
+
+        }
+
+
+        else if(currentTool === "shape") {
+
+            let type = document.getElementById("shapeType").value;
+
+            if(type === "square") {
+
+                let s = Number(document.getElementById("s").value);
+
+                r.textContent =
+                    "محیط: " + (4*s) +
+                    "\nمساحت: " + (s*s);
+
+            }
+
+            else if(type === "rectangle") {
+
+                let l = Number(document.getElementById("length").value);
+                let w = Number(document.getElementById("width").value);
+
+                r.textContent =
+                    "محیط: " + (2*(l+w)) +
+                    "\nمساحت: " + (l*w);
+
+            }
+
+            else if(type === "circle") {
+
+                let radius = Number(document.getElementById("radius").value);
+
+                r.textContent =
+                    "محیط: " + (2*Math.PI*radius).toFixed(2) +
+                    "\nمساحت: " + (Math.PI*radius*radius).toFixed(2);
 
             }
 
             else {
 
-                let miangin =
-                    total / grades.length;
+                let b = Number(document.getElementById("base").value);
+                let h = Number(document.getElementById("height").value);
+                let s1 = Number(document.getElementById("side1").value);
+                let s2 = Number(document.getElementById("side2").value);
+                let s3 = Number(document.getElementById("side3").value);
 
-
-                result =
-                    "مجموع نمره‌ها: " +
-                    total.toFixed(2) +
-                    "\nتعداد نمره‌ها: " +
-                    grades.length +
-                    "\nمعدل: " +
-                    miangin.toFixed(2);
+                r.textContent =
+                    "محیط: " + (s1+s2+s3) +
+                    "\nمساحت: " + (b*h/2);
 
             }
 
         }
 
-    }
+
+        else if(currentTool === "calculator") {
+
+            let expression = document.getElementById("calc").value;
+
+            if(!/^[0-9+\-*/(). %]+$/.test(expression)) {
+                r.textContent = "عبارت واردشده معتبر نیست.";
+                return;
+            }
+
+            r.textContent = "نتیجه: " + Function("return " + expression)();
+
+        }
 
 
-    document.getElementById("result").textContent = result;
+        else if(currentTool === "gcf") {
 
-}
+            let a = Math.abs(Number(document.getElementById("a").value));
+            let b = Math.abs(Number(document.getElementById("b").value));
+
+            let x=a, y=b;
+
+            while(y) {
+                let t=x%y;
+                x=y;
+                y=t;
+            }
+
+            let gcf=x;
+            let lcm=(a*b)/gcf;
+
+            r.textContent =
+                "ب.م.م: " + gcf +
+                "\nک.م.م: " + lcm;
+
+        }
 
 
-showInputs();
+        else if(currentTool === "discount") {
 
-</script>
+            let price = Number(document.getElementById("price").value);
+            let d = Number(document.getElementById("discount").value);
 
-</body>
-</html>
+            let saved = price*d/100;
+            let finalPrice = price-saved;
+
+            r.textContent =
+                "مقدار تخفیف: " + saved +
+                "\nقیمت نهایی: " + finalPrice;
+
+        }
+
+
+        else if(currentTool === "convert") {
+
+            let type = document.getElementById("convertType").value;
+            let n = Number(document.getElementById("convertNumber").value);
+            let result;
+
+            if(type==="cm") result=n/100+" متر";
+            if(type==="m") result=n*100+" سانتی‌متر";
+            if(type==="kg") result=n*1000+" گرم";
+            if(type==="g") result=n/1000+" کیلوگرم";
+            if(type==="c") result=((n*9/5)+32).toFixed(2)+" فارنهایت";
+            if(type==="f") result=((n-32)*5/9).toFixed(2)+" سلسیوس";
+            if(type==="min") result=n*60+" ثانیه";
+            if(type==="hour") result=n*60+" دقیقه";
+
+            r.textContent="نتیجه: "+result;
+
+        }
+
+
+        else if(currentTool === "speed") {
+
+            let type=document.getElementById("speedType").value;
+            let d=Number(document.getElementById("distance").value);
+            let t=Number(document.getElementById("time").value);
+            let s=Number(document.getElementById("speed").value);
+
+            if(type==="speed")
+                r.textContent="سرعت: "+(d/t);
+
+            if(type==="distance")
+                r.textContent="مسافت: "+(s*t);
+
+            if(type==="time")
+                r.textContent="زمان: "+(d/s);
+
+        }
+
+
+        else if(currentTool === "fraction") {
+
+            let a=Number(document.getElementById("numerator").value);
+            let b=Number(document.getElementById("denominator").value);
+
+            if(b===0) {
+                r.textContent="مخرج نمی‌تواند صفر باشد.";
+                return;
+            }
+
+            let decimal=a/b;
+
+            r.textContent =
+                "اعشار: "+decimal +
+                "\nدرصد: "+(decimal*100)+"٪";
+
+        }
+
+
+        else if(currentTool === "power") {
+
+            let type=document.getElementById("powerType").value;
+            let base=Number(document.getElementById("base").value);
+
+            if(type==="sqrt") {
+                r.textContent="جذر: "+Math.sqrt(base);
+            }
+
+            else {
+                let exp=Number(document.getElementById("exponent").value);
+                r.textContent="نتیجه: "+Math.pow(base,exp);
+            }
+
+        }
+
+
+        else if(currentTool === "divisibility") {
+
+            let n=Number(document.getElementById("number").value);
+            let out=[];
+
+            for(let i=1;i<=Math.abs(n);i++) {
+                if(n%i===0) out.push(i);
+            }
+
+            r.textContent="مقسوم‌علیه‌ها:\n"+out.join(" ، ");
+
+        }
+
+
+        else if(currentTool === "evenodd") {
+
+            let n=Number(document.getElementById("number").value);
+
+            r.textContent =
+                n%2===0
+                ? "این عدد زوج است."
+                : "این عدد فرد است.";
+
+        }
+
+
+        else if(currentTool === "prime") {
+
+            let n=Number(document.getElementById("number").value);
+            let prime=n>=2;
+
+            for(let i=2;i<n;i++) {
+         
