@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DanialTool</title>
+
+<style>
+
+body {
+    background-color: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+h1 {
+    color: #00ffff;
+}
+
+.option {
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    background-color: #222;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #00aaaa;
+    color: white;
+    font-size: 16px;
+}
+
+.result {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    white-space: pre-wrap;
+    margin-top: 15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Salam DADASHI!</h1>
+
+<p>
+Az in barname mitooni baraye taghalob ya abzare komaki, estefade koni.
+</p>
+
+<div class="option">1. bakhsh paziri</div>
+<div class="option">2. zoj ya fard</div>
+<div class="option">3. adade avval</div>
+<div class="option">4. baghi mande va khareje ghesmate taghsim</div>
+<div class="option">5. jadval zarb ( adad ro to midi )</div>
+<div class="option">6. miangin nomrehat chande? ( moaddel )</div>
+
+<label>Adade gozinei ke mikhay ro benevis :</label>
+
+<select id="entekhab" onchange="showInputs()">
+
+<option value="1">1. bakhsh paziri</option>
+<option value="2">2. zoj ya fard</option>
+<option value="3">3. adade avval</option>
+<option value="4">4. baghi mande va khareje ghesmate taghsim</option>
+<option value="5">5. jadval zarb</option>
+<option value="6">6. miangin</option>
+
+</select>
+
+<div id="inputs"></div>
+
+<button onclick="runTool()">Ejra</button>
+
+<div class="result" id="result">
+Result inja namayesh dade mishe.
+</div>
+
+</div>
+
+
+<script>
+
+function showInputs() {
+
+    let choice = document.getElementById("entekhab").value;
+
+    let inputs = document.getElementById("inputs");
+
+    if (choice == "1" || choice == "2" || choice == "3" || choice == "5") {
+
+        inputs.innerHTML = `
+        <label>Adad ra vared konid :</label>
+        <input type="number" id="number">
+        `;
+
+    }
+
+    else if (choice == "4") {
+
+        inputs.innerHTML = `
+        <label>Adade aval ra vared konid:</label>
+        <input type="number" id="number4">
+
+        <label>Adade dovom ra vared konid:</label>
+        <input type="number" id="number5">
+        `;
+
+    }
+
+    else if (choice == "6") {
+
+        inputs.innerHTML = `
+        <label>Chand ta nomre darid? ( tedade nomarat )</label>
+        <input type="number" id="tedad">
+        `;
+    }
+}
+
+
+function runTool() {
+
+    let choice = document.getElementById("entekhab").value;
+
+    let result = "";
+
+
+    // 1
+    if (choice == "1") {
+
+        let number = Number(document.getElementById("number").value);
+
+        if (number > 10000) {
+
+            result = "Lotfan adade zire 10 hezar vared konid";
+
+        } else {
+
+            for (let x = 1; x < 10000; x++) {
+
+                if (number % x == 0) {
+
+                    result += number + " bakhsh pazir hast bar " + x + "\n";
+
+                }
+            }
+        }
+    }
+
+
+    // 2
+    else if (choice == "2") {
+
+        let number2 = Number(document.getElementById("number").value);
+
+        if (number2 % 2 == 0) {
+
+            result = number2 + " zoj ast";
+
+        } else {
+
+            result = number2 + " fard ast";
+
+        }
+    }
+
+
+    // 3
+    else if (choice == "3") {
+
+        let number3 = Number(document.getElementById("number").value);
+
+        if (number3 < 2) {
+
+            result = "Adad avval nist";
+
+        } else {
+
+            let prime = true;
+
+            for (let x = 2; x < number3; x++) {
+
+                if (number3 % x == 0) {
+
+                    prime = false;
+                    break;
+
+                }
+            }
+
+            if (prime) {
+
+                result = number3 + " adade avval hast";
+
+            } else {
+
+                result = number3 + " adade avval nist";
+
+            }
+        }
+    }
+
+
+    // 4
+    else if (choice == "4") {
+
+        let number4 = Number(document.getElementById("number4").value);
+
+        let number5 = Number(document.getElementById("number5").value);
+
+        let khareje_ghesmat = Math.floor(number4 / number5);
+
+        let baghimande = number4 % number5;
+
+        result =
+        "Khareje ghesmat: " + khareje_ghesmat +
+        "\nBaghimande: " + baghimande;
+
+    }
+
+
+    // 5
+    else if (choice == "5") {
+
+        let number5 = Number(document.getElementById("number").value);
+
+        for (let x = 1; x <= 50; x++) {
+
+            result += number5 + " x " + x + " = " + (number5 * x) + "\n";
+
+        }
+    }
+
+
+    // 6
+    else if (choice == "6") {
+
+        let tedad = Number(document.getElementById("tedad").value);
+
+        result =
+        "Tedade nomarat: " + tedad +
+        "\n\nIn bakhsh ro dar ghadame badi kamel mikonim.";
+
+    }
+
+
+    document.getElementById("result").textContent = result;
+
+}
+
+
+showInputs();
+
+</script>
+
+</body>
+</html>
